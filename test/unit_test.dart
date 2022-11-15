@@ -4,12 +4,13 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
 import 'package:magic_test/Constants/AppConstants.dart';
 import 'package:magic_test/Data/Repository.dart';
+import 'package:magic_test/DataBox/DataBox.dart';
 import 'package:magic_test/Model/DataModel.dart';
 import 'package:mockito/mockito.dart';
 
 
 
-class MockHiveInterface extends Mock implements HiveInterface {}
+class MockDataBox extends Mock implements DataBox {}
 class MockBox<T> extends Mock implements Box<T> {}
 
 
@@ -19,12 +20,12 @@ void main() {
   final loyaltyCardList = [loyaltyCard1, loyaltyCard2];
 
   group('Given a Loyalty cards repository', () {
-    final mockHiveInterface = MockHiveInterface();
+    final mockDataBox = MockDataBox();
     final mockBox = MockBox<DataModel>();
 
-    final dataRepository = DataRepository(mockHiveInterface);
+    final dataRepository = DataRepository(mockDataBox);
 
-    when(mockHiveInterface.openBox(AppConstants.dataBox)).thenAnswer((_) async => mockBox);
+    when(mockDataBox.box).thenAnswer((_) async => mockBox);
     when(mockBox.values).thenReturn(loyaltyCardList);
 
     test('should retrieve all LoyaltyCards', () async {

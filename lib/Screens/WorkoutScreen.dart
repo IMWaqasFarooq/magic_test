@@ -4,6 +4,7 @@ import 'package:magic_test/Screens/BottomSheetWidget.dart';
 import 'package:magic_test/Data/Repository.dart';
 import 'package:magic_test/Mixin/BaseMixin.dart';
 import '../../Model/DataModel.dart';
+import '../DataBox/DataBox.dart';
 
 
 class WorkoutScreen extends StatefulWidget {
@@ -150,7 +151,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> with BaseMixin {
             ElevatedButton(
                 onPressed: (){
               if(rController.text.isNotEmpty && wController.text.isNotEmpty && exerciseName.isNotEmpty){
-                Repository repository = DataRepository(Hive);
+                Repository repository = DataRepository(DataBox());
                 DataModel data = DataModel(exerciseName, wController.text, rController.text);
                 if(update){
                   repository.update(index, data);

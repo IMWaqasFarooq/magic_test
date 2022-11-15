@@ -3,6 +3,7 @@ import 'package:hive/hive.dart';
 
 import '../CustomList/ListExercise.dart';
 import '../Data/Repository.dart';
+import '../DataBox/DataBox.dart';
 import '../Mixin/BaseMixin.dart';
 import '../Model/DataModel.dart';
 import 'WorkoutScreen.dart';
@@ -28,7 +29,7 @@ class _WorkoutDataScreenState extends State<WorkoutDataScreen> with BaseMixin{
   @override
   void initState() {
     // TODO: implement initState
-    repository = DataRepository(Hive);
+    repository = DataRepository(DataBox());
     getData();
     super.initState();
   }

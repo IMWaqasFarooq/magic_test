@@ -1,6 +1,7 @@
 import 'package:hive/hive.dart';
 
 import '../Constants/AppConstants.dart';
+import '../DataBox/DataBox.dart';
 import '../Model/DataModel.dart';
 
 abstract class Repository<T extends HiveObject> {
@@ -19,26 +20,27 @@ abstract class Repository<T extends HiveObject> {
 
 class DataRepository implements Repository<DataModel> {
 
-  final HiveInterface hive;
 
-  DataRepository(this.hive);
+  final DataBox dataBox;
+
+  DataRepository(this.dataBox);
 
   @override
   Future<List<DataModel>> getAll() async {
-    final box = await _openBox(AppConstants.dataBox);
+    final box = await dataBox.box;
     return box.values.toList().cast();
   }
 
   @override
   Future<void> save(DataModel newObject) async {
-    final box = await _openBox(AppConstants.dataBox);
+    final box = await dataBox.box;
 
     box.add(newObject);
   }
 
   @override
   Future<void> delete(DataModel objectToDelete) async {
-    final box = await _openBox(AppConstants.dataBox);
+    final box = await dataBox.box;
 
     box.delete(objectToDelete.key);
   }
@@ -46,18 +48,11 @@ class DataRepository implements Repository<DataModel> {
   @override
   Future<void> update(int index, DataModel objectToUpdate) async {
     // TODO: implement update
-    final box = await _openBox(AppConstants.dataBox);
+    final box = await dataBox.box;
 
     box.putAt(index,objectToUpdate);
   }
 
-  Future<Box> _openBox(String type) async {
-    try {
-      final box = await hive.openBox<DataModel>(type);
-      return box;
-    } catch (e) {
-      throw Exception();
-    }
-  }
+
 
 }
