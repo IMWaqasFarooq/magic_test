@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
-import '../CustomList/ListExercise.dart';
-import '../Data/Repository.dart';
-import '../DataBox/DataBox.dart';
-import '../Mixin/BaseMixin.dart';
-import '../Model/DataModel.dart';
-import 'WorkoutScreen.dart';
+import '../custom_list/list_exercise.dart';
+import '../data/repository.dart';
+import '../data_box/data_box.dart';
+import '../mixin/base_mixin.dart';
+import '../model/data_model.dart';
+import 'workout_screen.dart';
 
 class WorkoutDataScreen extends StatefulWidget {
   const WorkoutDataScreen({super.key});

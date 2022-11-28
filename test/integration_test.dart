@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
-import 'package:magic_test/Data/Repository.dart';
-import 'package:magic_test/DataBox/DataBox.dart';
-import 'package:magic_test/Model/DataModel.dart';
+import 'package:magic_test/data/repository.dart';
+import 'package:magic_test/data_box/data_box.dart';
+import 'package:magic_test/model/data_model.dart';
 
 void initialiseHive() async {
   var path = Directory.current.path;

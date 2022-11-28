@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:magic_test/Screens/BottomSheetWidget.dart';
-import 'package:magic_test/Data/Repository.dart';
-import 'package:magic_test/Mixin/BaseMixin.dart';
-import '../../Model/DataModel.dart';
-import '../DataBox/DataBox.dart';
+import 'package:magic_test/Screens/bottom_sheet.dart';
+import 'package:magic_test/Data/repository.dart';
+import 'package:magic_test/Mixin/base_mixin.dart';
+
+import '../data_box/data_box.dart';
+import '../model/data_model.dart';
 
 
 class WorkoutScreen extends StatefulWidget {

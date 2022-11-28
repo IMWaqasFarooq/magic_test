@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'DataModel.dart';
+part of 'data_model.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator

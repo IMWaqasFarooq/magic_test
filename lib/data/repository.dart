@@ -1,8 +1,7 @@
 import 'package:hive/hive.dart';
 
-import '../Constants/AppConstants.dart';
-import '../DataBox/DataBox.dart';
-import '../Model/DataModel.dart';
+import '../data_box/data_box.dart';
+import '../model/data_model.dart';
 
 abstract class Repository<T extends HiveObject> {
 

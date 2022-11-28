@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:magic_test/Screens/WorkoutDataScreen.dart';
+import 'package:magic_test/Screens/workout_data_screen.dart';
 import 'package:path_provider/path_provider.dart';
-import 'Model/DataModel.dart';
+
+import 'model/data_model.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding();

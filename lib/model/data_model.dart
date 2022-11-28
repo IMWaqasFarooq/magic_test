@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
 
-part 'DataModel.g.dart';
+part 'data_model.g.dart';
 
 @HiveType(typeId: 0)
 class DataModel extends HiveObject {

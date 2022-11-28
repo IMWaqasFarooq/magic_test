@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
-import '../Model/DataModel.dart';
+
+import '../model/data_model.dart';
 
 class ListExercise extends StatelessWidget {
   final DataModel? dataModel;
